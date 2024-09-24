@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認ページ</title>
+</head>
+<body>
+    <h1>お客様の登録情報</h1>
+    <p>名前: <span id="name"></span></p>
+    <p>来店希望日: <span id="date"></span></p>
+    <p>携帯番号（下4桁）: <span id="phone"></span></p>
+
+    <script>
+        // URLのクエリパラメータを取得して表示する
+        function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.slice(1);  // '?' を除いた部分を取得
+            var queryArray = queryString.split('&');
+            
+            queryArray.forEach(function(pair) {
+                var keyValue = pair.split('=');
+                params[keyValue[0]] = decodeURIComponent(keyValue[1] || '');
+            });
+            
+            return params;
+        }
+
+        window.onload = function() {
+            var params = getQueryParams();
+            document.getElementById('name').textContent = params.name || '未入力';
+            document.getElementById('date').textContent = params.date || '未入力';
+            document.getElementById('phone').textContent = params.phone || '未入力';
+        };
+    </script>
+</body>
+</html>

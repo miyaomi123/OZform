@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>確認ページ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>お客様の登録情報</h1>
-    <p>名前: <span id="name"></span></p>
-    <p>来店希望日: <span id="date"></span></p>
-    <p>携帯番号（下4桁）: <span id="phone"></span></p>
-
+    <div class="inner">
+        <div class="logo">
+            <div class="logoInner">
+                <img src="logo.svg" alt="">
+            </div>
+        </div>
+        <div class="message">
+            <p>ご予約頂き、ありがとう御座います。</p>
+            <p>ご登録頂きました情報は、下記になります。</p>
+        </div>
+        <h1>お客様の登録情報</h1>
+        <p>名前: <span id="name"></span></p>
+        <p>来店希望日: <span id="date"></span></p>
+        <p>携帯番号（下4桁）: <span id="phone"></span></p>
+    </div>
     <script>
         // URLのクエリパラメータを取得して表示する
         function getQueryParams() {
